@@ -7,8 +7,6 @@
 
 import Foundation
 
-//
-
 // 10869, 사칙연산
 // Float, Double 고려, 자연수 출력
 // (A / B).rounded(.towardZero)
@@ -64,6 +62,8 @@ print(seperatedB[2] * A)
 print(seperatedB[1] * A)
 print(seperatedB[0] * A)
 print(B * A)
+
+// 
 
 
 

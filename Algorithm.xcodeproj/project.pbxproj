@@ -26,6 +26,7 @@
 		F42E10A927F6AC0D00700660 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42E10AC27F6AC0D00700660 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F42E10B627F6AC6600700660 /* 22.4.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.1.swift; sourceTree = "<group>"; };
+		F42E10B827F7607100700660 /* 22.4.2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 			children = (
 				F42E10AC27F6AC0D00700660 /* main.swift */,
 				F42E10B627F6AC6600700660 /* 22.4.1.swift */,
+				F42E10B827F7607100700660 /* 22.4.2.swift */,
 			);
 			path = BOJ;
 			sourceTree = "<group>";
