@@ -27,6 +27,11 @@
 		F42E10AC27F6AC0D00700660 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F42E10B627F6AC6600700660 /* 22.4.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.1.swift; sourceTree = "<group>"; };
 		F42E10B827F7607100700660 /* 22.4.2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.2.swift; sourceTree = "<group>"; };
+		F42E10BB27FA0A4D00700660 /* Selection Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Selection Sort.swift"; sourceTree = "<group>"; };
+		F42E10BD27FA8D9B00700660 /* Bubble Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bubble Sort.swift"; sourceTree = "<group>"; };
+		F42E10BF27FA92FF00700660 /* Insertion Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Insertion Sort.swift"; sourceTree = "<group>"; };
+		F42E10C127FA9DEC00700660 /* Quick Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quick Sort.swift"; sourceTree = "<group>"; };
+		F42E10C327FAB58000700660 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 				F42E10B527F6AC4300700660 /* Leet */,
 				F42E10B427F6AC3900700660 /* BOJ */,
 				F42E10B327F6AC2F00700660 /* Programmers */,
+				F42E10BA27FA0A0F00700660 /* Dongbin */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -88,6 +94,18 @@
 			children = (
 			);
 			path = Leet;
+			sourceTree = "<group>";
+		};
+		F42E10BA27FA0A0F00700660 /* Dongbin */ = {
+			isa = PBXGroup;
+			children = (
+				F42E10BB27FA0A4D00700660 /* Selection Sort.swift */,
+				F42E10BD27FA8D9B00700660 /* Bubble Sort.swift */,
+				F42E10BF27FA92FF00700660 /* Insertion Sort.swift */,
+				F42E10C127FA9DEC00700660 /* Quick Sort.swift */,
+				F42E10C327FAB58000700660 /* Recursion.swift */,
+			);
+			path = Dongbin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
