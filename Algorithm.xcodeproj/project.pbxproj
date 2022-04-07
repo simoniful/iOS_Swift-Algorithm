@@ -32,6 +32,7 @@
 		F42E10BF27FA92FF00700660 /* Insertion Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Insertion Sort.swift"; sourceTree = "<group>"; };
 		F42E10C127FA9DEC00700660 /* Quick Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quick Sort.swift"; sourceTree = "<group>"; };
 		F42E10C327FAB58000700660 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
+		F42E10C727FEA41F00700660 /* 22.4.7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.7.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +86,7 @@
 				F42E10AC27F6AC0D00700660 /* main.swift */,
 				F42E10B627F6AC6600700660 /* 22.4.1.swift */,
 				F42E10B827F7607100700660 /* 22.4.2.swift */,
+				F42E10C727FEA41F00700660 /* 22.4.7.swift */,
 			);
 			path = BOJ;
 			sourceTree = "<group>";
