@@ -137,3 +137,53 @@ let results = lines.map { Class -> String in
 }
 
 results.forEach { print($0) }
+
+// 4673번, 셀프넘버
+// 전체의 빈 공간에서 빼서 원하는 것만 출력하기
+
+
+var answer = [Int?]()
+
+func selfNumber() {
+    for i in 1...10000 {
+        answer.append(i)
+    }
+    
+    for i in 1...10000 {
+        let result = i + Array(String(i)).map { Int(String($0))! }.reduce(0, +)
+        let sameIndex = answer.firstIndex(of: result)
+        if sameIndex != nil {
+            answer[sameIndex!] = nil
+        }
+    }
+    
+    answer.forEach { number in
+        if number != nil { print(number!) }
+    }
+}
+
+selfNumber()
+
+// 1065번, 한수
+
+let firstline = Int(readLine()!)!
+
+func printHanNumCount(_ num: Int) {
+    var answer = 0
+    
+    if num < 100 {
+        answer = num
+    } else {
+        var count = 99
+        for i in 100...num {
+            let numArr = Array(String(i)).map { Int(String($0))! }
+            if numArr[0] - numArr[1] == numArr[1] - numArr[2] {
+                count += 1
+            }
+        }
+        answer = count
+    }
+    print(answer)
+}
+
+printHanNumCount(firstline)
