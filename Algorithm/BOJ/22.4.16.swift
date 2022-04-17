@@ -161,3 +161,80 @@ for _ in 0..<testCount {
         print(-1)
     }
 }
+
+// 10872번, 팩토리얼
+
+let num = Int(readLine()!)!
+
+func calculate (num : Int) -> Int {
+    if num == 0 {
+        return 1
+    }
+    return num * calculate(num: num - 1)
+}
+
+print(calculate(num: num))
+
+// 10870번, 피보나치수 5
+
+func fibonacci(_ input: Int) -> Int {
+    if input == 0 {
+        return 0
+    } else if input == 1 {
+        return 1
+    }
+    var result = fibonacci(input - 1) + fibonacci(input - 2)
+    return result
+}
+
+print(fibonacci(input))
+
+// 2447번, 별 찍기 - 10
+
+let input = Int(readLine()!)!
+
+func printStar(_ input: Int, _ pattern: [String]) {
+    if input == 1 {
+        pattern.forEach { print($0) }
+        return
+    }
+    
+    let oneRow: [String] = pattern.map { $0 + $0 + $0 }
+    let otherRow: [String] = pattern.map { $0 + String(repeating: " ", count: $0.count) + $0 }
+    let newPattern = oneRow + otherRow + oneRow
+    
+    printStar(input / 3, newPattern)
+}
+
+printStar(input, ["*"])
+
+print(getIndex(input))
+
+// 11729번, 하노이의 탑 이동 순서
+// 비어있는 곳으로 큰 판을 제외한 n - 1 개의 원판을 이동시키고
+// 가장 큰 판을 목표로 하는 곳으로 이동하고
+// 이동해둔 n - 1 개의 원판을 목표로 하는 곳으로 이동
+
+let N = Int(readLine()!)!
+var count = 0
+var ans = ""
+
+func find(x: Int, cur: Int,  to: Int, empty: Int  ) {
+    if x == 1 {
+        count += 1
+        ans += "\(cur) \(to)\n"
+        return
+    }
+    // 가장 큰 판을 제외한 나머지를 목표 위치가 아닌 곳으로 이동
+    find(x: x - 1, cur: cur, to: empty, empty: to)
+    ans += "\(cur) \(to)\n"
+    count += 1
+    // 가장 큰 판을 목표로 하는 곳에다 깔고, 나머지 정렬된 판들을 목표로 하는 곳으로 이동
+    find(x: x - 1, cur: empty, to: to, empty: cur)
+}
+
+find(x: N, cur: 1, to: 3, empty: 2)
+ans.removeLast()
+print(count)
+print(ans)
+
