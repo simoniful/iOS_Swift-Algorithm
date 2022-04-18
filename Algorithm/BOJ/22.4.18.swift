@@ -7,7 +7,7 @@
 
 import Foundation
 
-// 1018번, 체스판 다시 칠하기
+// 1018번, 체스판 다시 칠하기 - 다시 해볼 것 
 
 // 1. 전체 체스판에서 8*8 크기의 체스판을 1칸씩 이동시키며 바꿔야하는 정사각형의 수를 확인
 // 2. 행+열의 값에 따라 경우의 수를 나누어,
@@ -34,7 +34,10 @@ for i in 0...row - 8 {
     for j in 0...col - 8 {
         var count = 0
         
-        // 8 * 8 크기 고정
+        // 8 * 8 크기 고정 - 8x8의 고정된 정사각형을 먼저 자른 다음
+        // 현재 행의 번호 i, 현재 열의 번호 j의 합이 짝수이면 시작점의 색깔과 같아야 하고,
+        // 홀수이면 시작점의 색깔과 다른 색이어야 한다.
+        
         for x in i..<i + 8 {
             for y in j..<j + 8 {
                 if (x + y) % 2 == 0 {
@@ -87,3 +90,102 @@ while true {
         break
     }
 }
+
+// 2750번, 수 정렬하기
+
+var lines = [Int]()
+let testCount = Int(readLine()!)!
+
+for _ in 0..<testCount {
+    let input = Int(readLine()!)!
+    lines.append(input)
+}
+
+func selectedSort(_ array: inout [Int]) {
+    for i in 0..<(array.count - 1) {
+        var minIndex = i
+        for j in (i + 1)..<array.count {
+            if array[j] < array[minIndex] {
+                minIndex = j
+            }
+        }
+        array.swapAt(i, minIndex)
+    }
+}
+
+selectedSort(&lines)
+print(lines)
+
+//  10989번, 수 정렬하기 3
+final class FileIO {
+    private let buffer:[UInt8]
+    private var index: Int = 0
+
+    init(fileHandle: FileHandle = FileHandle.standardInput) {
+        
+        buffer = Array(try! fileHandle.readToEnd()!)+[UInt8(0)] // 인덱스 범위 넘어가는 것 방지
+    }
+
+    @inline(__always) private func read() -> UInt8 {
+        defer { index += 1 }
+
+        return buffer[index]
+    }
+
+    @inline(__always) func readInt() -> Int {
+        var sum = 0
+        var now = read()
+        var isPositive = true
+
+        while now == 10
+                || now == 32 { now = read() } // 공백과 줄바꿈 무시
+        if now == 45 { isPositive.toggle(); now = read() } // 음수 처리
+        while now >= 48, now <= 57 {
+            sum = sum * 10 + Int(now-48)
+            now = read()
+        }
+
+        return sum * (isPositive ? 1:-1)
+    }
+
+    @inline(__always) func readString() -> String {
+        var now = read()
+
+        while now == 10 || now == 32 { now = read() } // 공백과 줄바꿈 무시
+        let beginIndex = index-1
+
+        while now != 10,
+              now != 32,
+              now != 0 { now = read() }
+
+        return String(bytes: Array(buffer[beginIndex..<(index-1)]), encoding: .ascii)!
+    }
+
+    @inline(__always) func readByteSequenceWithoutSpaceAndLineFeed() -> [UInt8] {
+        var now = read()
+
+        while now == 10 || now == 32 { now = read() } // 공백과 줄바꿈 무시
+        let beginIndex = index-1
+
+        while now != 10,
+              now != 32,
+              now != 0 { now = read() }
+
+        return Array(buffer[beginIndex..<(index-1)])
+    }
+}
+let file = FileIO()
+
+let N = file.readInt()
+var dp = Array(repeating:0, count:10001)
+for _ in 0..<N {
+    let q = file.readInt()
+    dp[q] += 1
+}
+var answer = ""
+for i in 1...10000 {
+    answer += String(repeating: "\(i)\n", count: dp[i])
+}
+print(answer)
+
+
