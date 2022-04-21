@@ -140,3 +140,22 @@ result.sort()
 result.removeFirst()
 
 print(result.map{ String($0) }.joined(separator: " "))
+
+// 3036번, 링
+// 서로소 및 최대공약수 관계
+
+let testCase = Int(readLine()!)!
+let lings = readLine()!.split(separator: " ").map{ Int($0)! }
+
+func gcd(_ m: Int, _ n: Int) -> Int {
+    if n == 0 {
+        return m
+    } else {
+        return gcd(n, m % n)
+    }
+}
+
+for i in 1..<testCase {
+    let gcd = gcd(lings[0], lings[i])
+    print("\(lings[0]/gcd)/\(lings[i]/gcd)")
+}

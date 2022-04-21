@@ -4,54 +4,42 @@
 //
 //  Created by Sang hun Lee on 2022/04/01.
 //
+
+// 2004번, 조합 0의 개수
+// 2, 5의 갯수를 비교
+// Combination == permutations / factorial == n! / (n - r)! * r!
+
 import Foundation
 
-// 2981번, 검문
-// 시간초과 - 브루트 포스
-// 인접한 차수의 최대공약수의 공약수
+let input = readLine()!.split(separator: " ").map{ Int($0)! }
 
-let testCast = Int(readLine()!)!
-var nums = [Int]()
+let N = input[0]
+var M = input[1]
 
-func gcd(_ m: Int, _ n: Int) -> Int {
-    if n == 0 {
-        return m
-    } else {
-        return gcd(n, m % n)
+func get2(_ num: Int) -> Int {
+    var count = 0
+    var i = 2
+    while num >= i {
+        count += num/i
+        i *= 2
     }
+    return count
 }
 
-for _ in 0..<testCast {
-    let input = Int(readLine()!)!
-    nums.append(input)
-}
-
-nums.sort()
-
-var bm = nums[1] - nums[0];
-
-for i in 2..<testCast {
-    bm = gcd(bm, nums[i] - nums[i - 1])
-}
-
-var result = [Int]()
-
-// 효율적인 약수 구하기
-for i in stride(from: 1, to: Int(sqrt(Double(bm))) + 1, by: 1) {
-    if bm % Int(i) == 0 {
-        result.append(i)
-        if i * i != bm {
-            result.append(bm / i)
-        }
+func get5(_ num: Int) -> Int {
+    var count = 0
+    var i = 5
+    while num >= i {
+        count += num/i
+        i *= 5
     }
+    return count
 }
 
-result.sort()
-result.removeFirst()
+let a = get2(N) - (get2(M) + get2(N - M))
+let b = get5(N) - (get5(M) + get5(N - M))
 
-print(result.map{ String($0) }.joined(separator: " "))
-
-
+print(min(a, b))
 
 
 
