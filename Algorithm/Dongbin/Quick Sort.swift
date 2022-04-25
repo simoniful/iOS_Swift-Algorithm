@@ -7,7 +7,7 @@
 
 import Foundation
 
-// 퀵정렬은 '특정 값을 기준으로 큰 숫자와 작은 숫자를 나누어 ' 알고리즘 방법'
+// 퀵 정렬은 '특정 값을 기준으로 큰 숫자와 작은 숫자를 나누어 ' 알고리즘 방법'
 // 분할 정복 기법으로 문제 해결
 // 평균 O(N*logN)의 시간 복잡도, 최악의 경우 O(N^2) - 이미 정렬 되어있는 경우
 // 대부분의 경우 가장 빠르게 수행
@@ -29,7 +29,7 @@ func quickSort( data: inout [Int], start: Int, end: Int) {
     // 엇갈릴 때 까지 반복
     while i <= j {
         // 피벗 값 보다 큰 값을 만날 때까지
-        // 오름차순/내림차순 결정 data[i] <= data[pivot 부등호만 교체
+        // 오름차순/내림차순 결정 data[i] <= data[pivot] 부등호만 교체
         while(i <= end && data[i] <= data[pivot]) {
             i += 1
         }
@@ -54,8 +54,6 @@ func quickSort( data: inout [Int], start: Int, end: Int) {
     }
     quickSort(data: &data, start: start, end: j - 1)
     quickSort(data: &data, start: j + 1, end: end)
-    
-    
 }
 
 quickSort(data: &data, start: 0, end: number - 1)

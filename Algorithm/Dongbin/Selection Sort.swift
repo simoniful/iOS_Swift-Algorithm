@@ -34,20 +34,24 @@ func selectionSort(notSortedArray: [Int]) -> [Int] {
     return array
 }
 
+func selectionSort(_ array: [Int]) -> [Int] {
+  guard array.count > 1 else { return array }  // 1
 
-func selectionSort(_ array: inout [Int]) {
-    // 스캔 작업 반복
-    for i in 0..<(array.count - 1) {
-        var minIndex = i
-        // 스캔 작업 (stand가 0이면 1번 index부터 마지막 Index까지 돌며 최소값을 찾아야 하니까)
-        for j in (i + 1)..<array.count {
-            if array[j] < array[minIndex] {
-                minIndex = j
-            }
-        }
-        array.swapAt(i, minIndex)
+  var a = array                    // 2
+
+  for x in 0 ..< a.count - 1 {     // 3
+
+    var lowest = x
+    for y in x + 1 ..< a.count {   // 4
+      if a[y] < a[lowest] {
+        lowest = y
+      }
     }
+
+    if x != lowest {               // 5
+      a.swapAt(x, lowest)
+    }
+  }
+  return a
 }
 
-
-print(selectionSort(notSortedArray: notSortedArray))

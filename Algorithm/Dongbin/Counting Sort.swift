@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 func countingSort(_ input: [Int]) -> [Int] {
     let maxElement = input.max() ?? 0
     
