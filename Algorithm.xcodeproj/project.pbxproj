@@ -23,6 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F4093C8328198D28009B5780 /* 22.4.28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.28.swift; sourceTree = "<group>"; };
+		F4093C852819AF82009B5780 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F42E10A927F6AC0D00700660 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42E10AC27F6AC0D00700660 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F42E10B627F6AC6600700660 /* 22.4.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.1.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				F4E490AE2810F3A00044AC24 /* 22.4.21.swift */,
 				F4607BFA281512A700BC2120 /* 22.4.24.swift */,
 				F4607BFC2816420B00BC2120 /* 22.4.25.swift */,
+				F4093C8328198D28009B5780 /* 22.4.28.swift */,
 				F4E490A6280DADF90044AC24 /* FileIO.swift */,
 			);
 			path = BOJ;
@@ -137,6 +140,7 @@
 				F4607BFE281642B300BC2120 /* Merge Sort.swift */,
 				F4DF3AB828168CE6002F5D2A /* Heap Sort.swift */,
 				F4E490A4280DAB480044AC24 /* Counting Sort.swift */,
+				F4093C852819AF82009B5780 /* Stack.swift */,
 				F42E10C327FAB58000700660 /* Recursion.swift */,
 			);
 			path = Dongbin;

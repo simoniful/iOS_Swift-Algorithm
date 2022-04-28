@@ -7,6 +7,21 @@
 
 import Foundation
 
+var stack = [Int]()
+let testCase =  Int(readLine()!)!
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
