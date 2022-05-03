@@ -129,3 +129,51 @@ while true {
     }
     print(stack.isEmpty ? "yes" : "no")
 }
+
+// 17298번, 오큰수
+// 시간초과
+var result = [String]()
+let testCase = Int(readLine()!)!
+var stack = readLine()!.split(separator: " ").map{ Int($0)! }
+stack = stack.reversed()
+
+for _ in 0..<testCase {
+    let pop = stack.popLast()
+    let greater = stack.filter({ $0 > pop! })
+    if greater.isEmpty {
+        result.append("-1")
+    } else {
+        result.append(String(greater.last!))
+    }
+}
+
+print(result.joined(separator: " "))
+
+// 17298번, 오큰수
+
+let n = Int(readLine()!)!
+var nums = readLine()!.split(separator: " ").map({Int(String($0))!})
+var stack = [Int]()
+
+for i in 0..<n {
+    // stack에 요소가 있고, 만약 nums[stack.last] 보다 현재의 값이 크다면 오큰수
+    while !stack.isEmpty && nums[stack.last!] < nums[i] {
+        // 그렇기에 'nums[stack.popLast()!] = 현재 값' 으로 설정하여,
+        // stack에서 해당 자리 값을 제거하고,
+        // popLast()로 반환 받을 현재 자리 값을 이용하여
+        // nums 배열의 해당 위치에 오큰수를 넣어준다.
+        let index = stack.popLast()!
+        nums[index] = nums[i]
+    }
+    // stack이 비어있다면 제일 첫 원소이므로 stack에 현재 자리 값을 append
+    stack.append(i)
+}
+
+// nums 배열에는 오큰수를 가지는 원소들만 오큰수로 값이 바뀌고
+// stack에는 오큰수를 가지지 않는 원소들의 자리 값이 들어가 있다.
+for i in stack {
+    // 따라서 for문을 사용해서 nums에서 stack위치의 원소값을 -1로 바꾸면 된다.
+    nums[i] = -1
+}
+
+print(nums.map{String($0)}.joined(separator: " "))
