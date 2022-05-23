@@ -2,9 +2,9 @@
 
 ## Theory - Raywenderlich,Dongbin
 
-| 주제                                                            | 마지막 업데이트             | Raywenderlich | Dongbin |
+| 주제                                                            | 마지막 업데이트             | Raywenderlich 번역| Dongbin 정리|
 | ---------------------------------------- | ---------------------- | -------------- | --------- |
-| Why Learn Data Structures & Algorithms? |      **2022.05.23**       |          ✔️           |      ✔️       |
+| [Why Learn Data Structures & Algorithms?](https://github.com/simoniful/iOS_Swift-Algorithm/issues/1) |      **2022.05.23**       |          ✔️           |      ✔️       |
 
 ## BOJ - 단계별로 풀어보기
 
