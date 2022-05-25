@@ -6,6 +6,7 @@
 | ---------------------------------------- | ---------------------- | -------------- | --------- |
 | [Why Learn Data Structures & Algorithms?](https://github.com/simoniful/iOS_Swift-Algorithm/issues/1) |      **2022.05.23**       |          ✔️           |      ✔️       |
 | [Complexity](https://github.com/simoniful/iOS_Swift-Algorithm/issues/2) |      **2022.05.24**       |          ✔️           |      ✔️       |
+| [Swift Standard Library](https://github.com/simoniful/iOS_Swift-Algorithm/issues/3) |      **2022.05.26**       |          ✔️           |      ✔️       |
 
 ## BOJ - 단계별로 풀어보기
 
