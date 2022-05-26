@@ -44,6 +44,7 @@
 		F4607BFA281512A700BC2120 /* 22.4.24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.24.swift; sourceTree = "<group>"; };
 		F4607BFC2816420B00BC2120 /* 22.4.25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.25.swift; sourceTree = "<group>"; };
 		F4607BFE281642B300BC2120 /* Merge Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Merge Sort.swift"; sourceTree = "<group>"; };
+		F46802E4283F246200C96EFC /* 22.5.26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.5.26.swift; sourceTree = "<group>"; };
 		F4A09C4428217807007E3434 /* 22.5.3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.5.3.swift; sourceTree = "<group>"; };
 		F4A09C4628217F00007E3434 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		F4A09C4828219612007E3434 /* 22.5.4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.5.4.swift; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 				F4C6FB27283B2C7A003BC122 /* 22.5.22.swift */,
 				F4F9296F283C8BB90064A6CD /* 22.5.24.swift */,
 				F4F92986283DF1B80064A6CD /* 22.5.25.swift */,
+				F46802E4283F246200C96EFC /* 22.5.26.swift */,
 				F4E490A6280DADF90044AC24 /* FileIO.swift */,
 			);
 			path = BOJ;
