@@ -1,3 +1,10 @@
+//
+//  22.6.7.swift
+//  Algorithm
+//
+//  Created by Sang hun Lee on 2022/06/07.
+//
+
 import Foundation
 
 // 9663번, N-Queen
@@ -14,7 +21,6 @@ func setDisable(_ map: [[Bool]] ,_ x: Int, _ y: Int) -> [[Bool]] {
     var size = 0
     var map = map
 
-    // 가운데
     for i in y ..< n {
         if map[i][x] {
             map[i][x] = false
@@ -22,9 +28,7 @@ func setDisable(_ map: [[Bool]] ,_ x: Int, _ y: Int) -> [[Bool]] {
     }
 
     while !(y - size <= 0 && y + size >= n) {
-        // 좌
         if x - size >= 0 {
-            // 아래
             if y + size < n {
                 if map[y + size][x - size] {
                     map[y + size][x - size] = false
@@ -32,9 +36,7 @@ func setDisable(_ map: [[Bool]] ,_ x: Int, _ y: Int) -> [[Bool]] {
             }
         }
 
-        // 우
         if x + size < n {
-            // 아래
             if y + size < n {
                 if map[y + size][x + size] {
                     map[y + size][x + size] = false
@@ -46,6 +48,7 @@ func setDisable(_ map: [[Bool]] ,_ x: Int, _ y: Int) -> [[Bool]] {
     }
     return map
 }
+
 
 func dfs(_ map: [[Bool]], _ depth: Int, _ beforeIndex: Int, _ result: inout Int) {
     if depth == n {
@@ -64,4 +67,3 @@ func dfs(_ map: [[Bool]], _ depth: Int, _ beforeIndex: Int, _ result: inout Int)
         }
     }
 }
-
