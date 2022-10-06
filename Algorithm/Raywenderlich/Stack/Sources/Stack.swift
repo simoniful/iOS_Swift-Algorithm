@@ -1,3 +1,4 @@
+import Foundation
 /// Copyright (c) 2019 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,4 +28,46 @@
 /// THE SOFTWARE.
 
 
-// TODO: Implement Stack
+struct Stack<Element: Equatable>: Equatable {
+    private var storage: [Element] = []
+    
+    init() { }
+    
+    init(_ elements: [Element]) {
+        self.storage = elements
+    }
+
+    var isEmpty: Bool {
+        return peak() == nil
+    }
+    
+    func peak() -> Element? {
+        return storage.last
+    }
+    
+    // 값 타입(struct)의 프로퍼티를 수정하기 위한 mutating
+    mutating func push(_ element: Element) {
+        storage.append(element)
+    }
+    
+    // return 결과를 쓰든 안쓰든 신경 X
+    @discardableResult
+    mutating func pop() -> Element? {
+        return storage.popLast()
+    }
+}
+
+extension Stack: CustomStringConvertible {
+    var description: String {
+        return storage
+            .map { "\($0)" }
+            .joined(separator: " ")
+    }
+}
+
+// Stack을 ArrayLiteral로 구성가능하도록
+extension Stack: ExpressibleByArrayLiteral {
+    init(arrayLiteral elements: Element...) {
+        storage = elements
+    }
+}
