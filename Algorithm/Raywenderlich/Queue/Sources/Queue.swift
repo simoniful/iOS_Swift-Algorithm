@@ -27,11 +27,61 @@
 /// THE SOFTWARE.
 
 
-//TODO: Queue Protocol
+// Queue Protocol
+protocol Queue {
+  // Element로서 여러 타입을 제네릭하게 받을 수 있도록 Placeholder 같은 역할
+  // protocol 내에서 사용하는 typealias
+  // Element 비교를 위한 Equatable
+  associatedtype Element: Equatable
+  mutating func enqueue(_ element: Element)
+  mutating func dequeue() -> Element?
+  var isEmpty: Bool { get }
+  var peek: Element? { get }
+}
 
+// Queue Array Struct
+struct QueueArray<T: Equatable>: Queue {
+  private var array: [T] = []
+  var isEmpty: Bool {
+    return array.isEmpty
+  }
+  var peek: T? {
+    return array.first
+  }
+  
+  // 값 타입의 struct에서 내부 프로퍼티를 수정하기 위한 불변성 존중
+  mutating func enqueue(_ element: T) {
+    array.append(element)
+  }
+  
+  // return 결과 값을 사용하지 않아도 warning 메시지 송출 X
+  @discardableResult
+  mutating func dequeue() -> T? {
+    return isEmpty ? nil : array.removeFirst()
+  }
+}
 
-//TODO: Queue Array
-
-
-//TODO: Queue Stack
-
+// Queue Stack
+struct QueueStack<T: Equatable>: Queue {
+  private var dequeueStack: [T] = []
+  private var enqueueStack: [T] = []
+  var isEmpty: Bool {
+    return dequeueStack.isEmpty && enqueueStack.isEmpty
+  }
+  var peek: T? {
+    return !dequeueStack.isEmpty ? dequeueStack.last : enqueueStack.first
+  }
+  
+  mutating func enqueue(_ element: T) {
+    enqueueStack.append(element)
+  }
+  
+  @discardableResult
+  mutating func dequeue() -> T? {
+    if dequeueStack.isEmpty {
+      dequeueStack = enqueueStack.reversed()
+      enqueueStack.removeAll()
+    }
+    return dequeueStack.popLast()
+  }
+}
