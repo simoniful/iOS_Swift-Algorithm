@@ -103,8 +103,8 @@
 		OBJ_9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0A7AA5FD21EDA20F00A15DA7 /* QueueTestCase.swift */,
 				0ABC822F21E86AB20008D749 /* StackTestCase.swift */,
+				0A7AA5FD21EDA20F00A15DA7 /* QueueTestCase.swift */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -172,6 +172,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = OBJ_5;
