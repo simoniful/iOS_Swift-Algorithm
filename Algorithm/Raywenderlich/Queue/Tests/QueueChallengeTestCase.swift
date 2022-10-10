@@ -38,7 +38,7 @@ extension QueueStack: BoardGameManager {
     typealias Player = T
     
     @discardableResult
-    mutating func nextPlayer() -> T? {
+    mutating func nextPlayer() -> Player? {
         guard let player = dequeue() else {
             return nil
         }
