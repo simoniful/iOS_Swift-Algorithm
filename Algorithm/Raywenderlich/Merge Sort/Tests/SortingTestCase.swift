@@ -34,6 +34,5 @@ final class SortingTestCase: XCTestCase {
   let sortedArray = [2, 3, 3, 4, 6, 7, 9, 11, 15]
   
   func test() {
-    
-  }
+    XCTAssertEqual(mergeSort(testArray), sortedArray)  }
 }
