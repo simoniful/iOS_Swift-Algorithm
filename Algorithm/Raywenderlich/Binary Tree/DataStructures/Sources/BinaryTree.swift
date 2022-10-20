@@ -26,29 +26,67 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+class BinaryNode<Element> {
+    var value: Element
+    var leftChild: BinaryNode?
+    var rightChild: BinaryNode?
+    
+    init(value: Element) {
+        self.value = value
+    }
+}
 
+extension BinaryNode {
+    // 왼쪽 서브트리를 중위 순회한다.
+    // 노드를 방문한다.
+    // 오른쪽 서브트리를 중위 순회한다.
+    func traverseInOrder(visit: (Element) -> Void) {
+        leftChild?.traverseInOrder(visit: visit)
+        visit(value)
+        rightChild?.traverseInOrder(visit: visit)
+    }
+    
+    // 노드를 방문한다.
+    // 왼쪽 서브트리를 전위 순회한다.
+    // 오른쪽 서브트리를 전위 순회한다.
+    func traverseInPreorder(visit: (Element) -> Void) {
+        visit(value)
+        leftChild?.traverseInPreorder(visit: visit)
+        rightChild?.traverseInPreorder(visit: visit)
+    }
+    
+    
+    // 왼쪽 서브트리를 후위 순회한다.
+    // 오른쪽 서브트리를 후위 순회한다.
+    // 노드를 방문한다.
+    func traverseInPostorder(visit: (Element) -> Void) {
+        leftChild?.traverseInPostorder(visit: visit)
+        rightChild?.traverseInPostorder(visit: visit)
+        visit(value)
+    }
+}
 
-//extension BinaryNode: CustomStringConvertible {
-//  //Note: This algorithm is based on an implementation by Károly Lőrentey in his book Optimizing Collections, available from https://www.objc.io/books/optimizing-collections/.
-//  
-//  public var description: String {
-//    return diagram(for: self)
-//  }
-//  
-//  private func diagram(for node: BinaryNode?,
-//                       _ top: String = "",
-//                       _ root: String = "",
-//                       _ bottom: String = "") -> String {
-//    guard let node = node else {
-//      return root + "nil\n"
-//    }
-//    if node.leftChild == nil && node.rightChild == nil {
-//      return root + "\(node.value)\n"
-//    }
-//    return diagram(for: node.rightChild,
-//                   top + " ", top + "┌──", top + "│ ")
-//      + root + "\(node.value)\n"
-//      + diagram(for: node.leftChild,
-//                bottom + "│ ", bottom + "└──", bottom + " ")
-//  }
-//}
+extension BinaryNode: CustomStringConvertible {
+    //Note: This algorithm is based on an implementation by Károly Lőrentey in his book Optimizing Collections, available from https://www.objc.io/books/optimizing-collections/.
+    
+    public var description: String {
+        return diagram(for: self)
+    }
+    
+    private func diagram(for node: BinaryNode?,
+                         _ top: String = "",
+                         _ root: String = "",
+                         _ bottom: String = "") -> String {
+        guard let node = node else {
+            return root + "nil\n"
+        }
+        if node.leftChild == nil && node.rightChild == nil {
+            return root + "\(node.value)\n"
+        }
+        return diagram(for: node.rightChild,
+                       top + " ", top + "┌──", top + "│ ")
+        + root + "\(node.value)\n"
+        + diagram(for: node.leftChild,
+                  bottom + "│ ", bottom + "└──", bottom + " ")
+    }
+}
