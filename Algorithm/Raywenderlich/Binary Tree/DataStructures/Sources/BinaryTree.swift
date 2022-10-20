@@ -49,12 +49,24 @@ extension BinaryNode {
     // 노드를 방문한다.
     // 왼쪽 서브트리를 전위 순회한다.
     // 오른쪽 서브트리를 전위 순회한다.
-    func traverseInPreorder(visit: (Element) -> Void) {
+//    func traverseInPreorder(visit: (Element) -> Void) {
+//        visit(value)
+//        leftChild?.traverseInPreorder(visit: visit)
+//        rightChild?.traverseInPreorder(visit: visit)
+//    }
+    func traverseInPreorder(visit: (Element?) -> Void) {
         visit(value)
-        leftChild?.traverseInPreorder(visit: visit)
-        rightChild?.traverseInPreorder(visit: visit)
+        if let leftChild = leftChild {
+            leftChild.traverseInPreorder(visit: visit)
+        } else {
+            visit(nil)
+        }
+        if let rightChild = rightChild {
+            rightChild.traverseInPreorder(visit: visit)
+        } else {
+            visit(nil)
+        }
     }
-    
     
     // 왼쪽 서브트리를 후위 순회한다.
     // 오른쪽 서브트리를 후위 순회한다.

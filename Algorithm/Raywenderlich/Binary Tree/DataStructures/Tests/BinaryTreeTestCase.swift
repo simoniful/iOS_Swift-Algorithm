@@ -29,6 +29,30 @@
 import XCTest
 @testable import DataStructures
 
+func serialize<T>(_ node: BinaryNode<T>) -> [T?] {
+    var array: [T?] = []
+    node.traverseInPreorder { array.append($0) }
+    return array
+}
+
+func deserialize<T>(_ array: inout [T?]) -> BinaryNode<T>? {
+    guard let value = array.removeLast() else {
+        return nil
+    }
+    
+    let node = BinaryNode(value: value)
+    node.leftChild = deserialize(&array)
+    node.rightChild = deserialize(&array)
+    return node
+}
+
+// removeLast()를 통한 시간 복잡도 증가 방지를 위한 최적화
+// 배열을 뒤집고 가장 마지막 배열을 빼어내는 방식으로 removeFirst -> removeLast
+func deserialize<T>(_ array: [T?]) -> BinaryNode<T>? {
+    var reversed = Array(array.reversed())
+    return deserialize(&reversed)
+}
+
 final class BinaryTreeTestCase: XCTestCase {
     var tree: BinaryNode<Int> = {
         let zero = BinaryNode(value: 0)
@@ -47,7 +71,6 @@ final class BinaryTreeTestCase: XCTestCase {
         return seven
     }()
     
-    
     func test_visualizeBinaryTree() {
         print(tree.description)
     }
@@ -61,9 +84,16 @@ final class BinaryTreeTestCase: XCTestCase {
     }
     
     func test_traversePreOrder() {
-        var testArray: [Int] = []
+//        var testArray: [Int] = []
+//        tree.traverseInPreorder {
+//            testArray.append($0)
+//        }
+//        XCTAssertEqual(testArray, [7, 1, 0, 5, 9, 8])
+        
+        var testArray: [Int?] = []
         tree.traverseInPreorder {
-            testArray.append($0)
+            guard let value = $0 else { return }
+            testArray.append(value)
         }
         XCTAssertEqual(testArray, [7, 1, 0, 5, 9, 8])
     }
@@ -74,5 +104,13 @@ final class BinaryTreeTestCase: XCTestCase {
             testArray.append($0)
         }
         XCTAssertEqual(testArray, [0, 5, 1, 8, 9, 7])
+    }
+    
+    func test_serialize() {
+        let expectedArray = [7, 1, 0, nil, nil, 5, nil, nil, 9, 8, nil, nil, nil]
+        let serializedTree = serialize(tree)
+        XCTAssertEqual(serializedTree, expectedArray)
+        let deserializedArray = deserialize(serializedTree)
+        XCTAssertEqual(deserializedArray?.description, tree.description)
     }
 }
