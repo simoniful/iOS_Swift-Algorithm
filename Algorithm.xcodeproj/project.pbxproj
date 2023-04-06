@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F42E10AD27F6AC0D00700660 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E10AC27F6AC0D00700660 /* main.swift */; };
+		F4977E4B29DF0A240038B785 /* 23.4.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4977E4A29DF0A240038B785 /* 23.4.5.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,9 @@
 		F4607BFC2816420B00BC2120 /* 22.4.25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.25.swift; sourceTree = "<group>"; };
 		F4607BFE281642B300BC2120 /* Merge Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Merge Sort.swift"; sourceTree = "<group>"; };
 		F46802E4283F246200C96EFC /* 22.5.26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.5.26.swift; sourceTree = "<group>"; };
+		F4977E4529DADD610038B785 /* 23.4.3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 23.4.3.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		F4977E4829DBAEFB0038B785 /* 23.4.4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 23.4.4.swift; sourceTree = "<group>"; };
+		F4977E4A29DF0A240038B785 /* 23.4.5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 23.4.5.swift; sourceTree = "<group>"; };
 		F4A09C4428217807007E3434 /* 22.5.3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.5.3.swift; sourceTree = "<group>"; };
 		F4A09C4628217F00007E3434 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		F4A09C4828219612007E3434 /* 22.5.4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.5.4.swift; sourceTree = "<group>"; };
@@ -138,6 +142,9 @@
 				F4469F6D2845D3EB00D55A57 /* 22.5.31.swift */,
 				F4469F6F28485B2300D55A57 /* 22.6.2.swift */,
 				F4FE6235284F2486000645B9 /* 22.6.7.swift */,
+				F4977E4529DADD610038B785 /* 23.4.3.swift */,
+				F4977E4829DBAEFB0038B785 /* 23.4.4.swift */,
+				F4977E4A29DF0A240038B785 /* 23.4.5.swift */,
 				F4E490A6280DADF90044AC24 /* FileIO.swift */,
 			);
 			path = BOJ;
@@ -196,7 +203,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					F42E10A827F6AC0D00700660 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -227,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42E10AD27F6AC0D00700660 /* main.swift in Sources */,
+				F4977E4B29DF0A240038B785 /* 23.4.5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +275,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -284,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -328,6 +337,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -339,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -353,6 +363,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = AT2N75TMZD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,6 +376,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = AT2N75TMZD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
