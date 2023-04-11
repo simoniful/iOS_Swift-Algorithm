@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F42CC77229E45308005E5DFA /* 23.4.9.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42CC77129E45308005E5DFA /* 23.4.9.swift */; };
+		F42CC77429E4EE3D005E5DFA /* 23.4.10.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42CC77329E4EE3D005E5DFA /* 23.4.10.swift */; };
 		F42E10AD27F6AC0D00700660 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E10AC27F6AC0D00700660 /* main.swift */; };
 		F4977E4B29DF0A240038B785 /* 23.4.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4977E4A29DF0A240038B785 /* 23.4.5.swift */; };
 		F4977E4D29DF35DA0038B785 /* 23.4.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4977E4C29DF35DA0038B785 /* 23.4.6.swift */; };
@@ -30,6 +31,7 @@
 		F4093C8328198D28009B5780 /* 22.4.28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.28.swift; sourceTree = "<group>"; };
 		F4093C852819AF82009B5780 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F42CC77129E45308005E5DFA /* 23.4.9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 23.4.9.swift; sourceTree = "<group>"; };
+		F42CC77329E4EE3D005E5DFA /* 23.4.10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 23.4.10.swift; sourceTree = "<group>"; };
 		F42E10A927F6AC0D00700660 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42E10AC27F6AC0D00700660 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F42E10B627F6AC6600700660 /* 22.4.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 22.4.1.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				F4977E4C29DF35DA0038B785 /* 23.4.6.swift */,
 				F4BD0B3429E1795400BC4310 /* 23.4.7.swift */,
 				F42CC77129E45308005E5DFA /* 23.4.9.swift */,
+				F42CC77329E4EE3D005E5DFA /* 23.4.10.swift */,
 				F4E490A6280DADF90044AC24 /* FileIO.swift */,
 			);
 			path = BOJ;
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42CC77429E4EE3D005E5DFA /* 23.4.10.swift in Sources */,
 				F42E10AD27F6AC0D00700660 /* main.swift in Sources */,
 				F4977E4D29DF35DA0038B785 /* 23.4.6.swift in Sources */,
 				F4977E4B29DF0A240038B785 /* 23.4.5.swift in Sources */,
