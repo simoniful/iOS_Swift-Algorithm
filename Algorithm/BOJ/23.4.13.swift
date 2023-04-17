@@ -52,57 +52,57 @@ import Foundation
 //print(minValue)
 
 // 14889번, 스타트와 링크
-struct Team {
-  let start: [Int]
-  let link: [Int]
-}
-
-let N = Int(readLine()!)!
-var graph = [[Int]]()
-var teams =  [Team]()
-
-for _ in 0..<N {
-  graph.append(readLine()!.split(separator: " ").map { Int($0)! })
-}
-
-var visited = [Bool](repeating: false, count: N)
-
-// 참여 인원을 절반씩 나누어 팀을 짜는 경우
-// 백트래킹을 통해 경우의 수에 따른 팀 생성
-func backtrackingTeam(index: Int, startTeam: [Int]) {
-  if startTeam.count == N / 2 {
-    let linkTeam = visited.enumerated().filter { !$0.element }.map { $0.offset }
-    teams.append(Team(start: startTeam, link: linkTeam))
-  }
-  
-  for i in index..<N {
-    if !visited[i] {
-      visited[i] = true
-      backtrackingTeam(index: i, startTeam: startTeam + [i])
-      visited[i] = false
-    }
-  }
-}
-
-backtrackingTeam(index: 0, startTeam: [])
-
-var answer = Int.max
-
-// 각각 팀을 순회하면서 점수 계산
-for team in teams {
-  var startScore = 0
-  var linkScore = 0
-  
-  for i in 0..<N / 2 - 1 {
-    for j in i + 1..<N / 2 {
-      startScore += graph[team.start[i]][team.start[j]]
-      startScore += graph[team.start[j]][team.start[i]]
-      linkScore += graph[team.link[i]][team.link[j]]
-      linkScore += graph[team.link[j]][team.link[i]]
-    }
-  }
-  
-  answer = min(answer, abs(startScore - linkScore))
-}
-
-print(answer)
+//struct Team {
+//  let start: [Int]
+//  let link: [Int]
+//}
+//
+//let N = Int(readLine()!)!
+//var graph = [[Int]]()
+//var teams =  [Team]()
+//
+//for _ in 0..<N {
+//  graph.append(readLine()!.split(separator: " ").map { Int($0)! })
+//}
+//
+//var visited = [Bool](repeating: false, count: N)
+//
+//// 참여 인원을 절반씩 나누어 팀을 짜는 경우
+//// 백트래킹을 통해 경우의 수에 따른 팀 생성
+//func backtrackingTeam(index: Int, startTeam: [Int]) {
+//  if startTeam.count == N / 2 {
+//    let linkTeam = visited.enumerated().filter { !$0.element }.map { $0.offset }
+//    teams.append(Team(start: startTeam, link: linkTeam))
+//  }
+//  
+//  for i in index..<N {
+//    if !visited[i] {
+//      visited[i] = true
+//      backtrackingTeam(index: i, startTeam: startTeam + [i])
+//      visited[i] = false
+//    }
+//  }
+//}
+//
+//backtrackingTeam(index: 0, startTeam: [])
+//
+//var answer = Int.max
+//
+//// 각각 팀을 순회하면서 점수 계산
+//for team in teams {
+//  var startScore = 0
+//  var linkScore = 0
+//  
+//  for i in 0..<N / 2 - 1 {
+//    for j in i + 1..<N / 2 {
+//      startScore += graph[team.start[i]][team.start[j]]
+//      startScore += graph[team.start[j]][team.start[i]]
+//      linkScore += graph[team.link[i]][team.link[j]]
+//      linkScore += graph[team.link[j]][team.link[i]]
+//    }
+//  }
+//  
+//  answer = min(answer, abs(startScore - linkScore))
+//}
+//
+//print(answer)
